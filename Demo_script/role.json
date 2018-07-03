@@ -1,0 +1,65 @@
+[{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "kms:GetParametersForImport",
+                "kms:Decrypt",
+                "kms:ListKeyPolicies",
+                "kms:GetKeyRotationStatus",
+                "kms:ListRetirableGrants",
+                "kms:GetKeyPolicy",
+                "kms:DescribeKey",
+                "kms:ListResourceTags",
+                "kms:ListGrants"
+            ],
+            "Resource": [
+                "arn:aws:kms:eu-west-1:854634259953:key/a53056c0-468a-4445-8412-c2366e565201"
+            ],
+            "Effect": "Allow"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kms:ListKeys",
+                "kms:GenerateRandom",
+                "kms:ListAliases",
+                "kms:ReEncryptTo",
+                "kms:ReEncryptFrom"
+            ],
+            "Resource": "*"
+        }
+    ]
+},{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "s3:Get*",
+            "Resource": [
+                "arn:aws:s3:::demo-end2end-ccoe",
+                "arn:aws:s3:::web-e2e.c2e2.aws.cloud.airbus.corp",
+                "arn:aws:s3:::demo-end2end-ccoe/*",
+                "arn:aws:s3:::web-e2e.c2e2.aws.cloud.airbus.corp/*"
+            ]
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::web-e2e.c2e2.aws.cloud.airbus.corp/*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": "s3:List*",
+            "Resource": [
+                "arn:aws:s3:::demo-end2end-ccoe",
+                "arn:aws:s3:::web-e2e.c2e2.aws.cloud.airbus.corp",
+                "arn:aws:s3:::demo-end2end-ccoe/*",
+                "arn:aws:s3:::web-e2e.c2e2.aws.cloud.airbus.corp/*"
+            ]
+        }
+    ]
+}]
