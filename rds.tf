@@ -21,6 +21,13 @@ resource "aws_db_instance" "mssql" {
   storage_encrypted       = true
   skip_final_snapshot     = true
   license_model           = "license-included"
+
+  tags {
+    Name                      = "rds-C2E2-dev-app"
+    "airbus:environment"      = "dev"
+    "airbus:stage"            = "dev"
+    "airbus:application_code" = "C2E2"
+  }
 }
 
 resource "aws_db_subnet_group" "rds_sub_group" {

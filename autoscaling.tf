@@ -38,7 +38,22 @@ resource "aws_autoscaling_group" "web-asg" {
   tag {
     key                 = "Name"
     propagate_at_launch = true
-    value               = "asg-web-terraform"
+    value               = "asg-C2E2-dev-app"
+  }
+  tag {
+    key                 = "airbus:environment"
+    propagate_at_launch = true
+    value               = "C2E2"
+  }
+  tag {
+    key                 = "airbus:stage"
+    propagate_at_launch = true
+    value               = "dev"
+  }
+  tag {
+    key                 = "airbus:environment"
+    propagate_at_launch = true
+    value               = "dev"
   }
 }
 
