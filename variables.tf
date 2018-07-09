@@ -27,7 +27,6 @@ data "aws_subnet_ids" "local" {
     "airbus:network" = "local"
   }
 }
-
 variable "availability_zones" {
   type    = "list"
   default = ["eu-west-1a", "eu-west-1b"]
